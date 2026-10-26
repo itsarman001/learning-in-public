@@ -1,7 +1,6 @@
 # Crewbase: Team & RBAC Management Platform
 
-**Status:** In progress | **Stack:** Next.js 16, Prisma, PostgreSQL | **Repo:** [link](https://github.com/itsarman001/crewbase.git)
-
+**Status:** In progress | **Stack:** Next.js 16, Prisma, PostgreSQL | **Repo:** [link](https://github.com/itsarman001/crewbase.git) | **YouTube:** [link](https://youtu.be/b05ky3LdzKU)
 ## Why I'm building this
 I came across this project and saw it covers everything I need to start my backend journey. I'm documenting what I learn, what I do differently from the original, and the features I add myself.
 
