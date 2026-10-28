@@ -15,3 +15,15 @@ Dated progress log for Crewbase. Reasoning lives in `03-decisions.md` and `04-ch
 
 ## Oct 26, 2026, 01:30 - Creating the API
 - Downgraded from Prisma 7 to Prisma 6 after it kept slowing me down. See decision 4.
+
+## Oct 27, 2026 - Auth Helpers
+- Implemented the authentication helpers:
+  - Password hashing
+  - Token generation
+  - User permission check
+- Found and fixed a typo in `generateToken` while debugging why the register API was failing. See the challenge in `04-challenges.md`.
+
+## Oct 28, 2026 - Register API
+- Fixed a casing error in the Prisma user model: `Team` -> `team`.
+- Implemented user registration with validation, role assignment, and token generation.
+- Debugged and fixed minor bugs in the `generateToken` helper and the register API.
