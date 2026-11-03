@@ -58,3 +58,37 @@ Dated progress log for Crewbase. Reasoning lives in `03-decisions.md` and `04-ch
 **Database**
 
 - Implemented database seeding for teams and users with hashed passwords.
+
+## Nov 1, 2026 - Team & Role Assignment Routes
+- Merged PR #4 (`feat/team-user-api-enhance`) adding team and role assignment routes for users.
+- Renamed the route folder `[userid]` -> `[userId]` so params resolve correctly.
+- **Team assignment:** accepts `Team.id`, verifies the team exists, and allows `null` to unassign.
+- **Role update:** validates against `MANAGER`/`USER`, blocks self-change, and blocks changing other admins.
+- Returned proper status codes: 401 unauthenticated, 403 unauthorized, 400 invalid JSON or body, 404 missing user or team.
+- Used Prisma's `P2025` error code for not-found handling instead of matching the error message.
+- Selected only safe user fields so the password hash is never returned.
+
+## Nov 2, 2026 - UI Planning & Foundation (plan.md Steps 1-4)
+
+**Setup**
+- Added `AGENTS.md` with project guidelines and `pnpm` commands (tech stack, code rules, Next.js 16 notes, Git practices).
+- Added `mcp_config.json` for the shadcn MCP server.
+- Added `plan.md` to define the scope, phases, and execution order for building the UI with shadcn/ui.
+- Added `components.json` and the initial dependencies (`@base-ui/react`, `class-variance-authority`, `cn`, `lucide-react`, `shadcn`, `tw-animate-css`), plus a `cn` utility and a `Button` component with variants and sizes.
+
+**Step 1 - Component library & theme**
+- Added the UI component library and updated theme styling.
+
+**Step 2 - Providers & cleanup**
+- Added theme variables and layout providers.
+- Refactored the auth route: removed an unused `request` parameter and sanitized the user object without destructuring.
+
+**Step 3 - Dashboard**
+- Added the dashboard overview page, navigation sidebar, and mock data infrastructure.
+
+**Step 4 - Authentication UI**
+- Implemented the authentication layout and the login and register pages with forms.
+
+## Nov 3, 2026 - Remaining Phase 1 Screens (plan.md Step 5)
+- Completed Phase 1 of `plan.md` by implementing the users, teams, roles, profile, and system states screens.
+- Refactored the UI to use direct named imports for React hooks and types.
