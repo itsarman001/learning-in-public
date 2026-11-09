@@ -1,6 +1,6 @@
 # Changelog
 
-Dated progress log for Crewbase. Reasoning lives in `03-decisions.md` and `04-challenges.md`.
+Dated progress log for Crewbase. Reasoning lives in `decisions.md` and `challenges.md`.
 
 ---
 
@@ -26,7 +26,7 @@ Dated progress log for Crewbase. Reasoning lives in `03-decisions.md` and `04-ch
   - Password hashing
   - Token generation
   - User permission check
-- Found and fixed a typo in `generateToken` while debugging why the register API was failing. See the challenge in `04-challenges.md`.
+- Found and fixed a typo in `generateToken` while debugging why the register API was failing. See the challenge in `challenges.md`.
 
 ## Oct 28, 2026 - Register API
 
