@@ -1,4 +1,4 @@
-# Systed Design Topics
+# System Design Topics
 
 - [ ] Architecture Patterns
 - [ ] Caching
