@@ -17,7 +17,7 @@ Big-O has two important characteristics:
 
 Time complexity describes how the number of operations performed by an algorithm grows as the input size increases.
 
-### Example 1: Linear Time Complexity — O(n)
+### Example 1: Linear Time Complexity — $O(n)$
 
 ```
 function sum(n) { // suppose n = 4
@@ -40,13 +40,15 @@ function sum(n) { // suppose n = 4
 - Return statement: `1`
     
 
-Total operations: `n + 2`
+Total operations:
 
-Since Big-O ignores constant terms, the complexity is **O(n)**.
+$$T(n) = n + 2$$
+
+Since Big-O ignores constant terms, the complexity is $O(n)$.
 
 This is called **Linear Time Complexity** because the number of operations grows proportionally with the input size.
 
-### Example 2: Constant Time Complexity — O(1)
+### Example 2: Constant Time Complexity — $O(1)$
 
 ```
 function sum1(n) {
@@ -56,7 +58,7 @@ function sum1(n) {
 
 Regardless of the input size, the formula executes a fixed number of operations.
 
-Therefore, the time complexity is **O(1)**.
+Therefore, the time complexity is $O(1)$.
 
 This is called **Constant Time Complexity** because the number of operations does not depend on the input size.
 
@@ -64,20 +66,15 @@ This is called **Constant Time Complexity** because the number of operations doe
 
 There are several other time complexities to understand:
 
-- **O(1):** Constant
-    
-- **O(log n):** Logarithmic
-    
-- **O(n):** Linear
-    
-- **O(n log n):** Linearithmic
-    
-- **O(n²):** Quadratic
-    
-- **O(n³):** Cubic
-    
-- **O(2ⁿ):** Exponential
-    
+|Big-O Notation|Complexity|
+|---|---|
+|$O(1)$|Constant|
+|$O(\log n)$|Logarithmic|
+|$O(n)$|Linear|
+|$O(n \log n)$|Linearithmic|
+|$O(n^2)$|Quadratic|
+|$O(n^3)$|Cubic|
+|$O(2^n)$|Exponential|
 
 I will explore these complexities in more detail as I progress through the course and track my learning.
 
@@ -91,15 +88,15 @@ _Visual comparison of common Big-O time complexities._
 
 Space complexity describes how much memory an algorithm requires as the input size grows.
 
-### 1. O(1) — Constant Space
+### 1. $O(1)$ — Constant Space
 
 The algorithm uses a fixed amount of extra memory, regardless of the input size.
 
-### 2. O(n) — Linear Space
+### 2. $O(n)$ — Linear Space
 
 The extra memory required grows proportionally with the input size.
 
-### 3. O(log n) — Logarithmic Space
+### 3. $O(\log n)$ — Logarithmic Space
 
 The extra memory grows logarithmically with the input size.
 
