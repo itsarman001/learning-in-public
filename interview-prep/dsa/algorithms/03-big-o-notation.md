@@ -107,3 +107,11 @@ The extra memory grows logarithmically with the input size.
 2. **Different implementations:** The same algorithm, even in the same programming language, can be implemented in different ways.
     
 3. **Code readability matters:** When writing programs professionally, don't lose sight of the bigger picture. Instead of writing clever code, prioritize code that is simple to read, understand, and maintain.
+
+## Big-O Guide / Cheat Sheet
+
+- Constant Time: Calculation does not depend on input size — $O(1)$
+- Linear Time: Single loop — $O(n)$
+- Quadratic Time: Two nested loops — $O(n^2)$
+- Cubic Time: Three nested loops — $O(n^3)$
+- Logarithmic Time: Input size is reduced by half in each step — $O(\log n)$
