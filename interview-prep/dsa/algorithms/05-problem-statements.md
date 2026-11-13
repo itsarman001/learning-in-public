@@ -19,6 +19,8 @@ fibonacci(3) // [0, 1, 1]
 fibonacci(7) // [0, 1, 1, 2, 3, 5, 8]
 ```
 
+## Solution
+
 > [!question]- Solution
 > 
 > 
@@ -42,17 +44,22 @@ fibonacci(7) // [0, 1, 1, 2, 3, 5, 8]
 
 # Factorial of a Number
 ---
-Problem: Given an integer `n`, find the factorial of that integer.
+
+## Problem
+
+Given an integer `n`, find the factorial of that integer.
 
 In mathematics, the factorial of a non-negative integer `n`, denoted by `n!`, is the product of all positive integers less than or equal to `n`.
 
 The factorial of zero is 1.
 
-### Examples
+## Examples
 
 - `factorial(4) = 4 × 3 × 2 × 1 = 24`
     
 - `factorial(5) = 5 × 4 × 3 × 2 × 1 = 120`
+
+## Solution
 
 > [!question]- Solution
 >
@@ -77,4 +84,46 @@ The factorial of zero is 1.
 > $$T(n) = n$$
 >
 > Therefore, the time complexity is $O(n)$.
+
+
+# Prime Number
+---
+
+## Problem
+
+Given a natural number `n`, determine if the number is prime or not
+
+A prime number is a natural number greater than 1 that is not a product of two smaller natural numbers
+
+## Example
+
+- `isPrime(5) = true (1 * 5 or  5 * 1)`
+	
+- `isPrime(4) = false (1 * 4 or 2 * 2 or 4 * 1)`
+
+## Solution
+
+> [!question]- Solution
+> 
+> ```js
+> function isPrime(n) {
+>   if (n < 2) return false;
+> 
+>   for (let i = 2; i <= Math.sqrt(n); i++) {
+>     if (n % i === 0) return false;
+>   }
+> 
+>   return true;
+> }
+> ```
+
+> [!question]- What is the time complexity of the solution?
+> **Answer:** $O(\sqrt{n})$
+> 
+> **Explanation:** 
+> The loop runs from `2` up to $\sqrt{n}$, checking for factors in constant time on each iteration. Because factors come in pairs, checking past $\sqrt{n}$ is unnecessary.
+> 
+> $$T(n) = \sqrt{n}$$
+> 
+> Therefore, the time complexity is $O(\sqrt{n})$.
 
