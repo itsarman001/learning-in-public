@@ -47,7 +47,7 @@ What is the time complexity of the solution?
 
 **Explanation:** The loop runs `n - 2` times, and each iteration performs a constant-time addition.
 
-T(n) = n - 2
+$$T(n) = n - 2$$
 
 Therefore, the time complexity is linear, O(n). The space complexity is also O(n) because the sequence is stored in an array.
 
