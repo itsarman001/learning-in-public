@@ -55,3 +55,46 @@ linearSearch(arr, 20);
 | $O(n)$          | $O(1)$           |
 
 ----
+## Binary Search
+
+### Problem
+Given an array of `n` elements and a target element `t`, find the index of `t` in the array. Return -1 if the target element is not found
+
+### Example
+
+```js
+const arr = [-5, 2, 4, 6, 10]
+
+// t = 10 Should return 4
+// t = 6 Should return 3
+// t = 20 Should return -1
+```
+
+### Solution
+
+```js
+function binarySearch(array =[], target) {
+    let leftIndex = 0;
+    let rightIndex = array.length -1;
+
+    while (leftIndex <= rightIndex) {
+        let middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+        if(target === array[middleIndex]) return middleIndex;
+        if(target > array[middleIndex]) {
+            leftIndex = middleIndex + 1;
+        } else  {
+            rightIndex = middleIndex -1
+        }
+    }
+    return -1
+}
+```
+
+Time Complexity: $O(\log n)$ 
+
+### Binary search pseudo-code
+
+1. If the array is empty, return -1 as the element cannot be found.
+2. if the array has elements, find the middle element in the array. If target is equal to the middle element, return middle element index
+3. if target is less than the middle element, binary search left half of the array
+4. If target is greater than middle element, binary search right half of the array
