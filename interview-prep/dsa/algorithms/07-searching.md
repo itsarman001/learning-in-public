@@ -98,3 +98,44 @@ Time Complexity: $O(\log n)$
 2. if the array has elements, find the middle element in the array. If target is equal to the middle element, return middle element index
 3. if target is less than the middle element, binary search left half of the array
 4. If target is greater than middle element, binary search right half of the array
+
+---
+
+## Recursive Binary Search
+
+### Problem
+Given an array of `n` elements and a target element `t`, find the index of `t` in the array. Return -1 if the target element is not found
+
+### Example
+
+```js
+const arr = [-5, 2, 4, 6, 10]
+
+// t = 10 Should return 4
+// t = 6 Should return 3
+// t = 20 Should return -1
+```
+
+### Solution
+
+```js
+function recursiveBinarySearch(array, target) {
+  return search(array, target, 0, array.length - 1);
+}
+
+function search(array, target, leftIndex, rightIndex) {
+  if (leftIndex > rightIndex) return -1;
+  
+  const middleIndex = Math.floor((leftIndex + rightIndex) / 2);
+  
+  if (array[middleIndex] === target) return middleIndex;
+  
+  if (target < array[middleIndex]) {
+    return search(array, target, leftIndex, middleIndex - 1);
+  }
+  
+  return search(array, target, middleIndex + 1, rightIndex);
+}
+```
+
+Time Complexity: $O(\log n)$ 
