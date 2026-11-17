@@ -134,19 +134,62 @@ insertionSort(arr);
 ### How It Works
 
 1. Virtually divide the array into a sorted and an unsorted part.
-    
 2. Assume the first element is already sorted, and the remaining elements are unsorted.
-    
 3. Select an element from the unsorted part.
-    
 4. Compare the selected element with the elements in the sorted part, starting from right to left.
-    
 5. Shift all elements that are greater than the selected element one position to the right.
-    
 6. Insert the selected element into its correct position.
-    
 7. Repeat until all elements have been inserted into the sorted part.
-    
+
+#### Initial Array
+
+`[-6, 20, 8, -2, 4]`
+
+The first element `-6` is considered sorted.
+
+#### First Pass
+
+Select `20` and compare it with `-6`.
+
+```css
+[-6  20   8  -2   4]
+```
+
+`-6 > 20?` No. Keep `20` in its current position.
+
+#### Second Pass
+
+Select `8` and compare it with elements in the sorted part.
+
+```css
+[-6  20   8  -2   4]
+[-6  20  20  -2   4]  Shift since 20 > 8
+[-6   8  20  -2   4]  Insert 8
+```
+
+#### Third Pass
+
+Select `-2` and compare it with elements in the sorted part.
+
+```css
+[-6   8  20  -2   4]
+[-6   8  20  20   4]  Shift since 20 > -2
+[-6   8   8  20   4]  Shift since 8 > -2
+[-6  -2   8  20   4]  Insert -2
+```
+
+#### Fourth Pass
+
+Select `4` and compare it with elements in the sorted part.
+
+```css
+[-6  -2   8  20   4]
+[-6  -2   8  20  20]  Shift since 20 > 4
+[-6  -2   8   8  20]  Shift since 8 > 4
+[-6  -2   4   8  20]  Insert 4
+```
+
+End of array. All elements are inserted into their correct positions. The array is sorted.
 
 ![[insertion_sort_example.png]]
 
@@ -176,11 +219,11 @@ insertionSort(arr); // Output: [-6, -2, 4, 8, 20]
 
 ### Time and Space Complexity
 
-|Case|Time Complexity|
-|---|---|
-|Best Case (Already Sorted)|O(n)|
-|Average Case|O(n²)|
-|Worst Case (Reverse Sorted)|O(n²)|
+| Case                        | Time Complexity |
+| --------------------------- | --------------- |
+| Best Case (Already Sorted)  | O(n)            |
+| Average Case                | O(n²)           |
+| Worst Case (Reverse Sorted) | O(n²)           |
 
 **Space Complexity:** O(1)
 
@@ -191,16 +234,183 @@ Insertion Sort sorts the array in place without requiring additional space propo
 Insertion Sort is more efficient for small or nearly sorted datasets but becomes inefficient for large datasets.
 
 - It performs well when the array is already sorted or nearly sorted.
-    
 - It is useful for understanding sorting algorithms and practicing for coding interviews.
-    
 - It is an in-place sorting algorithm, meaning it does not require additional space proportional to the input size.
-    
 - It is a stable sorting algorithm because equal elements maintain their relative order.
-    
 - Algorithms such as Merge Sort and Quick Sort are generally preferred for larger datasets.
-    
 - In JavaScript, built-in `Array.prototype.sort()` is commonly used for sorting.
-    
 
 **Remember:** Insertion Sort builds a sorted array one element at a time by shifting larger elements to the right and inserting the selected element into its correct position.
+
+---
+
+## Quick Sort
+
+Quick Sort is a divide-and-conquer sorting algorithm that works by selecting a pivot element and partitioning the array around it.
+
+It divides the array into two parts:
+
+- **Left:** Elements smaller than or equal to the pivot.
+- **Right:** Elements greater than the pivot.
+
+It recursively applies the same process to the left and right arrays until each array contains fewer than two elements.
+
+Finally, it combines the sorted left array, pivot and sorted right array to produce the sorted array.
+
+### Problem
+
+Given an array of integers, sort the array in ascending order.
+
+### Example
+
+```js
+const arr = [-6, 20, 8, -2, 4];
+
+quickSort(arr);
+// Returns [-6, -2, 4, 8, 20]
+```
+
+### How It Works
+
+1. Select a pivot element from the array.
+
+   There are several ways to choose a pivot:
+   - Pick the first element as the pivot.
+   - Pick the last element as the pivot (our approach).
+   - Pick a random element as the pivot.
+   - Pick the median element as the pivot.
+
+2. Partition the array into two parts:
+   - Place elements smaller than or equal to the pivot into the `left` array.
+   - Place elements greater than the pivot into the `right` array.
+
+3. Recursively apply Quick Sort to the individual `left` and `right` arrays.
+
+4. Continue until each array contains fewer than two elements. An array with zero or one element is already sorted by definition.
+
+5. Combine the sorted `left` array, pivot and sorted `right` array.
+
+6. Repeat the process until one completely sorted array remains.
+
+#### Initial Array
+
+`[-6, 20, 8, -2, 4]`
+
+#### First Partition
+
+Select the last element `4` as the pivot.
+
+```js
+[-6, 20, 8, -2, 4];
+
+Pivot = 4;
+
+Left = [-6, -2];
+Right = [20, 8];
+```
+
+Combine:
+
+```js
+[-6, -2] + [4] + [20, 8];
+```
+
+#### Second Partition
+
+Apply Quick Sort to the left and right arrays.
+
+For the left array:
+
+```js
+[-6, -2];
+
+Pivot = -2;
+
+Left = [-6];
+Right = [];
+```
+
+For the right array:
+
+```js
+[20, 8];
+
+Pivot = 8;
+
+Left = [8];
+Right = [20];
+```
+
+#### Final Result
+
+Combine the sorted left array, pivot and sorted right array.
+
+```js
+[-6] + [-2] + [4] + [8] + [20];
+```
+
+The resulting array is:
+
+```js
+[-6, -2, 4, 8, 20];
+```
+
+![[quick_sort_example.png]]
+
+### Solution
+
+```js
+function quickSort(arr) {
+  if (arr.length < 2) return arr;
+
+  let pivot = arr[arr.length - 1];
+  let left = [];
+  let right = [];
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > pivot) {
+      right.push(arr[i]);
+    } else {
+      left.push(arr[i]);
+    }
+  }
+
+  return [...quickSort(left), pivot, ...quickSort(right)];
+}
+
+const arr = [-6, 20, 8, -2, 4];
+
+quickSort(arr); // Output: [-6, -2, 4, 8, 20]
+```
+
+### Time and Space Complexity
+
+| Case         | Time Complexity |
+| ------------ | --------------- |
+| Best Case    | O(n log n)      |
+| Average Case | O(n log n)      |
+| Worst Case   | O(n²)           |
+
+**Space Complexity:** O(n) for this implementation.
+
+Quick Sort divides the array into smaller subarrays and recursively sorts them.
+
+- **Best Case:** O(n log n). The pivot divides the array into roughly equal-sized partitions.
+- **Average Case:** O(n log n). The partitions are reasonably balanced on average.
+- **Worst Case:** O(n²). The pivot repeatedly produces highly unbalanced partitions, such as when the array is already sorted and the last element is consistently selected as the pivot.
+
+The implementation uses additional arrays for partitioning and creates new arrays using the spread operator. Therefore, its auxiliary space usage is O(n) on average, with O(n) space for the recursion stack in the worst case.
+
+### Note
+
+Quick Sort is generally an efficient sorting algorithm for large datasets, especially when partitions are reasonably balanced.
+
+- It follows the divide-and-conquer approach.
+- Choosing a good pivot helps avoid highly unbalanced partitions.
+- Randomized pivot selection can help reduce the likelihood of consistently unbalanced partitions.
+- Quick Sort is generally not a stable sorting algorithm.
+- In-place implementations can reduce auxiliary space usage compared to this implementation.
+- Algorithms such as Merge Sort and Quick Sort are commonly used when efficient sorting is required.
+- In JavaScript, built-in `Array.prototype.sort()` is commonly used for sorting.
+
+**Remember:** Quick Sort selects a pivot, partitions the array around it, recursively sorts the partitions and combines them to produce a sorted array.
