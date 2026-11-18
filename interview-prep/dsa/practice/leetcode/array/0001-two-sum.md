@@ -171,10 +171,10 @@ var twoSum = function(nums, target) {
 
 ### Comparison
 
-| Approach | Time Complexity | Space Complexity |
-|---|---|---|
-| Brute Force | `O(n²)` | `O(1)` |
-| Hash Map | `O(n)` | `O(n)` |
+| Approach    | Time Complexity | Space Complexity |
+| ----------- | --------------- | ---------------- |
+| Brute Force | `O(n²)`         | `O(1)`           |
+| Hash Map    | `O(n)`          | `O(n)`           |
 
 ---
 
