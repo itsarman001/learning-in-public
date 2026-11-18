@@ -89,11 +89,11 @@ bubbleSort(arr); // Output: [-6, -2, 4, 8, 20]
 
 | Case                        | Time Complexity |
 | --------------------------- | --------------- |
-| Best Case (Already Sorted)  | O(n)            |
-| Average Case                | O(n²)           |
-| Worst Case (Reverse Sorted) | O(n²)           |
+| Best Case (Already Sorted)  | $O(n)$          |
+| Average Case                | $O(n²)$         |
+| Worst Case (Reverse Sorted) | $O(n²)$         |
 
-**Space Complexity:** O(1)
+**Space Complexity:** $O(1)$
 
 Bubble Sort sorts the array in place without requiring additional space proportional to the input size.
 
@@ -221,11 +221,11 @@ insertionSort(arr); // Output: [-6, -2, 4, 8, 20]
 
 | Case                        | Time Complexity |
 | --------------------------- | --------------- |
-| Best Case (Already Sorted)  | O(n)            |
-| Average Case                | O(n²)           |
-| Worst Case (Reverse Sorted) | O(n²)           |
+| Best Case (Already Sorted)  | $O(n)$          |
+| Average Case                | $O(n²)$         |
+| Worst Case (Reverse Sorted) | $O(n²)$         |
 
-**Space Complexity:** O(1)
+**Space Complexity:** $O(1)$
 
 Insertion Sort sorts the array in place without requiring additional space proportional to the input size.
 
@@ -387,19 +387,19 @@ quickSort(arr); // Output: [-6, -2, 4, 8, 20]
 
 | Case         | Time Complexity |
 | ------------ | --------------- |
-| Best Case    | O(n log n)      |
-| Average Case | O(n log n)      |
-| Worst Case   | O(n²)           |
+| Best Case    | $O(n log n)$    |
+| Average Case | $O(n log n)$    |
+| Worst Case   | $O(n²)$         |
 
-**Space Complexity:** O(n) for this implementation.
+**Space Complexity:** $O(n)$ for this implementation.
 
 Quick Sort divides the array into smaller subarrays and recursively sorts them.
 
-- **Best Case:** O(n log n). The pivot divides the array into roughly equal-sized partitions.
-- **Average Case:** O(n log n). The partitions are reasonably balanced on average.
-- **Worst Case:** O(n²). The pivot repeatedly produces highly unbalanced partitions, such as when the array is already sorted and the last element is consistently selected as the pivot.
+- **Best Case:** $O(n log n)$. The pivot divides the array into roughly equal-sized partitions.
+- **Average Case:** $O(n log n)$. The partitions are reasonably balanced on average.
+- **Worst Case:** $O(n²)$. The pivot repeatedly produces highly unbalanced partitions, such as when the array is already sorted and the last element is consistently selected as the pivot.
 
-The implementation uses additional arrays for partitioning and creates new arrays using the spread operator. Therefore, its auxiliary space usage is O(n) on average, with O(n) space for the recursion stack in the worst case.
+The implementation uses additional arrays for partitioning and creates new arrays using the spread operator. Therefore, its auxiliary space usage is $O(n)$ on average, with $O(n)$ space for the recursion stack in the worst case.
 
 ### Note
 
@@ -441,19 +441,12 @@ mergeSort(arr);
 ### How It Works
 
 1. Divide the array into two halves.
-    
 2. Recursively divide each half into smaller subarrays.
-    
 3. Continue dividing until each subarray contains only one element.
-    
 4. Merge two subarrays by comparing their first unprocessed elements.
-    
 5. Place the smaller element into the new sorted array.
-    
 6. Continue until one subarray is empty, then append the remaining elements from the other subarray.
-    
 7. Repeatedly merge the sorted subarrays until one sorted array remains.
-    
 
 #### Initial Array
 
@@ -547,11 +540,7 @@ function merge(leftArr, rightArr) {
     }
   }
 
-  return [
-    ...sortedArr,
-    ...leftArr.slice(i),
-    ...rightArr.slice(j),
-  ];
+  return [...sortedArr, ...leftArr.slice(i), ...rightArr.slice(j)];
 }
 
 const arr = [-6, 20, 8, -2, 4];
@@ -563,33 +552,26 @@ mergeSort(arr); // Output: [-6, -2, 4, 8, 20]
 
 | Case         | Time Complexity |
 | ------------ | --------------- |
-| Best Case    | O(n log n)      |
-| Average Case | O(n log n)      |
-| Worst Case   | O(n log n)      |
+| Best Case    | $O(n log n)$    |
+| Average Case | $O(n log n)$    |
+| Worst Case   | $O(n log n)$    |
 
-**Space Complexity:** O(n)
+**Space Complexity:** $O(n)$
 
 Merge Sort divides the array into halves recursively, resulting in O(log n) recursion depth.
 
-During merging, it creates temporary arrays to store sorted elements, requiring O(n) additional space.
+During merging, it creates temporary arrays to store sorted elements, requiring $O(n)$ additional space.
 
 ### Note
 
 Merge Sort is an efficient sorting algorithm for large datasets.
 
 - It follows the divide-and-conquer approach.
-    
-- Its time complexity is O(n log n) in all cases.
-    
+- Its time complexity is $O(n log n)$ in all cases.
 - It is a stable sorting algorithm because equal elements maintain their relative order.
-    
 - It requires additional memory for merging, unlike in-place sorting algorithms.
-    
 - It is particularly useful when predictable performance is important.
-    
 - Algorithms such as Quick Sort and Merge Sort are commonly used for efficient sorting.
-    
 - In JavaScript, built-in `Array.prototype.sort()` is commonly used for sorting.
-    
 
 **Remember:** Merge Sort divides the array into smaller subarrays until each contains one element, then repeatedly merges them in sorted order until one sorted array remains.
