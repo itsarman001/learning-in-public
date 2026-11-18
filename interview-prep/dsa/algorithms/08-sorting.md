@@ -414,3 +414,182 @@ Quick Sort is generally an efficient sorting algorithm for large datasets, espec
 - In JavaScript, built-in `Array.prototype.sort()` is commonly used for sorting.
 
 **Remember:** Quick Sort selects a pivot, partitions the array around it, recursively sorts the partitions and combines them to produce a sorted array.
+
+---
+
+## Merge Sort
+
+Merge Sort is a divide-and-conquer sorting algorithm that divides an array into smaller subarrays until each subarray contains a single element.
+
+It then repeatedly merges the subarrays in sorted order until only one sorted array remains.
+
+An array containing only one element is considered sorted by definition.
+
+### Problem
+
+Given an array of integers, sort the array in ascending order.
+
+### Example
+
+```js
+const arr = [-6, 20, 8, -2, 4];
+
+mergeSort(arr);
+// Returns [-6, -2, 4, 8, 20]
+```
+
+### How It Works
+
+1. Divide the array into two halves.
+    
+2. Recursively divide each half into smaller subarrays.
+    
+3. Continue dividing until each subarray contains only one element.
+    
+4. Merge two subarrays by comparing their first unprocessed elements.
+    
+5. Place the smaller element into the new sorted array.
+    
+6. Continue until one subarray is empty, then append the remaining elements from the other subarray.
+    
+7. Repeatedly merge the sorted subarrays until one sorted array remains.
+    
+
+#### Initial Array
+
+`[-6, 20, 8, -2, 4]`
+
+#### First Division
+
+Divide the array into two halves.
+
+```
+[-6, 20]    [8, -2, 4]
+```
+
+#### Second Division
+
+Continue dividing the subarrays.
+
+```
+[-6] [20]    [8] [-2, 4]
+```
+
+#### Third Division
+
+Divide the remaining subarray.
+
+```
+[-6] [20]    [8] [-2] [4]
+```
+
+Every subarray contains one element and is sorted.
+
+#### First Merge
+
+Merge `[-6]` and `[20]`.
+
+```
+[-6, 20]
+```
+
+Merge `[-2]` and `[4]`.
+
+```
+[-2, 4]
+```
+
+#### Second Merge
+
+Merge `[8]` and `[-2, 4]`.
+
+Compare the elements and place them in ascending order.
+
+```
+[-2, 4, 8]
+```
+
+#### Final Merge
+
+Merge `[-6, 20]` and `[-2, 4, 8]`.
+
+```
+[-6, -2, 4, 8, 20]
+```
+
+The array is sorted.
+
+### Solution
+
+```js
+function mergeSort(arr) {
+  if (arr.length < 2) return arr;
+
+  const mid = Math.floor(arr.length / 2);
+  const leftArr = arr.slice(0, mid);
+  const rightArr = arr.slice(mid);
+
+  return merge(mergeSort(leftArr), mergeSort(rightArr));
+}
+
+function merge(leftArr, rightArr) {
+  const sortedArr = [];
+  let i = 0;
+  let j = 0;
+
+  while (i < leftArr.length && j < rightArr.length) {
+    if (leftArr[i] <= rightArr[j]) {
+      sortedArr.push(leftArr[i]);
+      i++;
+    } else {
+      sortedArr.push(rightArr[j]);
+      j++;
+    }
+  }
+
+  return [
+    ...sortedArr,
+    ...leftArr.slice(i),
+    ...rightArr.slice(j),
+  ];
+}
+
+const arr = [-6, 20, 8, -2, 4];
+
+mergeSort(arr); // Output: [-6, -2, 4, 8, 20]
+```
+
+### Time and Space Complexity
+
+| Case         | Time Complexity |
+| ------------ | --------------- |
+| Best Case    | O(n log n)      |
+| Average Case | O(n log n)      |
+| Worst Case   | O(n log n)      |
+
+**Space Complexity:** O(n)
+
+Merge Sort divides the array into halves recursively, resulting in O(log n) recursion depth.
+
+During merging, it creates temporary arrays to store sorted elements, requiring O(n) additional space.
+
+### Note
+
+Merge Sort is an efficient sorting algorithm for large datasets.
+
+- It follows the divide-and-conquer approach.
+    
+- Its time complexity is O(n log n) in all cases.
+    
+- It is a stable sorting algorithm because equal elements maintain their relative order.
+    
+- It requires additional memory for merging, unlike in-place sorting algorithms.
+    
+- It is particularly useful when predictable performance is important.
+    
+- Algorithms such as Quick Sort and Merge Sort are commonly used for efficient sorting.
+    
+- In JavaScript, built-in `Array.prototype.sort()` is commonly used for sorting.
+    
+
+**Remember:** Merge Sort divides the array into smaller subarrays until each contains one element, then repeatedly merges them in sorted order until one sorted array remains.
