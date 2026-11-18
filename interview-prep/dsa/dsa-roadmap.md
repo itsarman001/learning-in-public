@@ -1,172 +1,198 @@
-# Logic Building Roadmap (JavaScript + DSA)
+# DSA Roadmap: Blind 75 in JavaScript
 
-A 12-week plan for junior frontend interviews. About 1-2 hours a day. Tick the boxes as you go.
+75 problems, ordered by NeetCode's roadmap graph (each pattern builds on the ones before it). About 13 weeks at 1-2 hours a day and roughly 6 problems a week. Solve on LeetCode in JavaScript, tick boxes here.
 
-## How to work through it
+## The rules
 
-1. Learn the pattern briefly (one short video or article), then solve one easy problem while following a solution.
-2. Solve the next problems yourself with a 25-30 minute timer.
-3. If you are stuck, read the solution, close it, then re-solve it from scratch.
-4. Re-solve after about 3 days and again after about a week.
-5. After each pattern, write a short note in `learning-in-public` (the pattern, when to use it, one mistake you made).
+1. **Learn first, briefly.** For each new pattern, spend at most 20-30 minutes on one explainer (a NeetCode video, another YouTube video, or one blog post). Then go solve.
+2. **Attempt before help.** Give each problem 25-30 minutes. If stuck, read or watch a solution, close it, and re-solve from scratch.
+3. **Dry-run by hand.** Trace your code on a small input before submitting.
+4. **Write a note** for every problem in `learning-in-public`: approach, time and space complexity, one mistake you made.
+5. **Re-solve** each problem after 3 days and again after about a week. The last item of each week is a revision slot for this.
+6. **JS utility of the week.** One interview-style JS function per week (listed below), written from scratch.
 
-**Checkpoint:** after Week 7 you have covered most of what junior frontend interviews ask. Weeks 8-12 matter more for product companies. If an interview is close, do Weeks 1-7 first.
+Notes path: `interview-prep/dsa/practice/leetcode/<pattern>/NNNN-problem-name.md`, with pattern folders named after the sections below (`arrays-hashing`, `two-pointers`, ...).
 
-## Resources
+## Where to learn (use whichever works for you)
 
-|Resource|Use|
+|Source|Use|
 |---|---|
-|Codevolution, JavaScript Algorithms and Data Structures (80 videos)|Reference when a topic does not click. Do not watch it end to end.|
-|RoadsideCoder, DSA with JS (19 videos)|Quick first pass or revision|
-|Sheryians, DSA with JavaScript Series (22 videos)|Alternative short pass|
-|NeetCode (neetcode.io)|NeetCode 150 list, with a free video for each problem|
-|LeetCode, 30 Days of JavaScript (study plan)|JS fundamentals and utilities|
-|GreatFrontEnd|Frontend questions: JS utilities, UI components, system design (part free, part paid)|
-|Your `react-js-interview-question` repo|Revision base for JS and React theory|
+|NeetCode video for each problem|After your own attempt|
+|Codevolution playlist|Data structure videos when you reach that topic (see `playlist-duration.xlsx`)|
+|Any other YouTube video or blog|For the pattern explainer. Search "<pattern> pattern leetcode" and pick one. Stop at one.|
+|GreatFrontEnd, LeetCode "30 Days of JavaScript"|JS utility functions and frontend questions|
 
-Pick one short playlist for the basics. Spend most of your time solving problems, not watching videos.
+Premium note: problems marked **(P)** are paywalled on LeetCode. Check whether NeetCode offers a free version; if not, skip them. The other patterns are still fully covered.
 
 ## Weekly plan
 
-### Week 1: JS fundamentals + arrays and hashing
+### Week 1: Arrays & Hashing
 
-- [ ] Revise closures, `this`, promises, the event loop
-- [ ] 217 Contains Duplicate
-- [ ] 1 Two Sum
+- [x] 217 Contains Duplicate
+- [x] 1 Two Sum
 - [ ] 242 Valid Anagram
 - [ ] 49 Group Anagrams
 - [ ] 347 Top K Frequent Elements
 - [ ] 238 Product of Array Except Self
 - [ ] 128 Longest Consecutive Sequence
+- [ ] 271 Encode and Decode Strings (P)
+- [ ] JS: closures + `debounce`
+- [ ] Re-solve the ones you struggled with
 
-### Week 2: Two pointers + JS utilities
+### Week 2: Two Pointers, Stack, Binary Search
 
 - [ ] 125 Valid Palindrome
-- [ ] 167 Two Sum II
 - [ ] 15 3Sum
 - [ ] 11 Container With Most Water
-- [ ] 42 Trapping Rain Water (stretch)
-- [ ] Write from scratch: debounce, throttle, flatten, deep clone
+- [ ] 20 Valid Parentheses
+- [ ] 153 Find Minimum in Rotated Sorted Array
+- [ ] 33 Search in Rotated Sorted Array
+- [ ] JS: `throttle`
+- [ ] Re-solve Week 1 problems
 
-### Week 3: Sliding window + Promise polyfills
+(You have already solved 704 Binary Search and 35 Search Insert Position, which are not on the Blind 75 list but are good groundwork for this week.)
+
+### Week 3: Sliding Window
 
 - [ ] 121 Best Time to Buy and Sell Stock
 - [ ] 3 Longest Substring Without Repeating Characters
 - [ ] 424 Longest Repeating Character Replacement
-- [ ] 567 Permutation in String
-- [ ] 76 Minimum Window Substring (stretch)
-- [ ] Write from scratch: `Promise.all`, curry, memoize, event emitter
+- [ ] 76 Minimum Window Substring (hard, give it extra time)
+- [ ] JS: `flatten`
+- [ ] Re-solve Week 2 problems
 
-### Week 4: Stack
-
-- [ ] 20 Valid Parentheses
-- [ ] 155 Min Stack
-- [ ] 150 Evaluate Reverse Polish Notation
-- [ ] 739 Daily Temperatures
-- [ ] 84 Largest Rectangle in Histogram (stretch)
-- [ ] Revise Weeks 1-3 (re-solve 3-4 problems you struggled with)
-
-### Week 5: Binary search
-
-- [ ] 704 Binary Search
-- [ ] 74 Search a 2D Matrix
-- [ ] 875 Koko Eating Bananas
-- [ ] 153 Find Minimum in Rotated Sorted Array
-- [ ] 33 Search in Rotated Sorted Array
-- [ ] Revise Week 4
-
-### Week 6: Linked list
+### Week 4: Linked List
 
 - [ ] 206 Reverse Linked List
 - [ ] 21 Merge Two Sorted Lists
 - [ ] 141 Linked List Cycle
 - [ ] 19 Remove Nth Node From End of List
 - [ ] 143 Reorder List
-- [ ] 2 Add Two Numbers
+- [ ] 23 Merge k Sorted Lists (hard)
+- [ ] JS: `deepClone`
+- [ ] Re-solve Week 3 problems
 
-### Week 7: Recursion + trees
+### Week 5: Trees, part 1
 
 - [ ] 226 Invert Binary Tree
 - [ ] 104 Maximum Depth of Binary Tree
 - [ ] 100 Same Tree
-- [ ] 543 Diameter of Binary Tree
-- [ ] 110 Balanced Binary Tree
+- [ ] 572 Subtree of Another Tree
+- [ ] 235 Lowest Common Ancestor of a BST
 - [ ] 102 Binary Tree Level Order Traversal
+- [ ] JS: `Promise.all`
+- [ ] Re-solve Week 4 problems
+
+### Week 6: Trees, part 2
+
 - [ ] 98 Validate Binary Search Tree
 - [ ] 230 Kth Smallest Element in a BST
-- [ ] 235 Lowest Common Ancestor of a BST
+- [ ] 105 Construct Binary Tree from Preorder and Inorder Traversal
+- [ ] 124 Binary Tree Maximum Path Sum (hard)
+- [ ] 297 Serialize and Deserialize Binary Tree (hard)
+- [ ] JS: `curry`
+- [ ] Re-solve Week 5 problems
 
-### Week 8: Heap + revision
+### Week 7: Tries, Backtracking, Heap
 
-- [ ] 703 Kth Largest Element in a Stream
-- [ ] 1046 Last Stone Weight
-- [ ] 973 K Closest Points to Origin
-- [ ] 215 Kth Largest Element in an Array
-- [ ] 621 Task Scheduler
-- [ ] Revise Weeks 5-7
-
-### Week 9: Backtracking + intervals
-
-- [ ] 78 Subsets
-- [ ] 46 Permutations
+- [ ] 208 Implement Trie
+- [ ] 211 Design Add and Search Words Data Structure
+- [ ] 212 Word Search II (hard)
 - [ ] 39 Combination Sum
 - [ ] 79 Word Search
-- [ ] 56 Merge Intervals
-- [ ] 57 Insert Interval
-- [ ] 435 Non-overlapping Intervals
+- [ ] 295 Find Median from Data Stream (hard)
+- [ ] JS: `memoize`
+- [ ] Re-solve Week 6 problems
 
-### Week 10: Graphs
+### Week 8: Graphs
 
 - [ ] 200 Number of Islands
-- [ ] 695 Max Area of Island
 - [ ] 133 Clone Graph
-- [ ] 994 Rotting Oranges
+- [ ] 417 Pacific Atlantic Water Flow
 - [ ] 207 Course Schedule
+- [ ] 323 Number of Connected Components in an Undirected Graph (P)
+- [ ] 261 Graph Valid Tree (P)
+- [ ] 269 Alien Dictionary (P, hard)
+- [ ] JS: `EventEmitter`
+- [ ] Re-solve Week 7 problems
 
-### Week 11: 1-D dynamic programming
+### Week 9: 1-D Dynamic Programming, part 1
 
 - [ ] 70 Climbing Stairs
 - [ ] 198 House Robber
+- [ ] 213 House Robber II
 - [ ] 322 Coin Change
-- [ ] 300 Longest Increasing Subsequence
 - [ ] 139 Word Break
+- [ ] JS: `bind`, `call`, `apply` polyfills
+- [ ] Re-solve Week 8 problems
 
-### Week 12: Revision and mocks
+### Week 10: 1-D Dynamic Programming, part 2
 
-- [ ] Re-solve every problem you marked as hard, from scratch
-- [ ] Do 3-4 timed mock sessions (2 problems in 45 minutes)
-- [ ] Do 2 machine-coding practice rounds (build a UI component in 45-60 minutes)
-- [ ] Clean up your `learning-in-public` notes
+- [ ] 5 Longest Palindromic Substring
+- [ ] 647 Palindromic Substrings
+- [ ] 91 Decode Ways
+- [ ] 152 Maximum Product Subarray
+- [ ] 300 Longest Increasing Subsequence
+- [ ] JS: `map`, `filter`, `reduce` polyfills
+- [ ] Re-solve Week 9 problems
 
-## Pattern order (why)
+### Week 11: 2-D DP, Greedy, Intervals
 
-|#|Pattern|Why it comes here|
-|---|---|---|
-|1|Arrays and hashing|The foundation, covers many easy questions|
-|2|Two pointers|Builds on arrays and strings|
-|3|Sliding window|A direct extension of two pointers|
-|4|Stack|Simple structure, many interview uses|
-|5|Binary search|Short to learn, easy to get wrong|
-|6|Linked list|Mostly pointer-handling practice|
-|7|Recursion, then trees|Needs recursion to be comfortable first|
-|8|Heap|Needs sorting and tree intuition|
-|9|Backtracking and intervals|Recursion applied to choices; intervals are quick wins|
-|10|Graphs|Extends trees|
-|11|1-D DP|Last, builds on recursion and memoization|
+- [ ] 62 Unique Paths
+- [ ] 1143 Longest Common Subsequence
+- [ ] 53 Maximum Subarray
+- [ ] 55 Jump Game
+- [ ] 56 Merge Intervals
+- [ ] 57 Insert Interval
+- [ ] 435 Non-overlapping Intervals
+- [ ] 252 Meeting Rooms (P)
+- [ ] 253 Meeting Rooms II (P)
+- [ ] JS: `Promise.race` and `Promise.allSettled`
+- [ ] Re-solve Week 10 problems
+
+### Week 12: Bit Manipulation, Math & Geometry
+
+- [ ] 191 Number of 1 Bits
+- [ ] 338 Counting Bits
+- [ ] 190 Reverse Bits
+- [ ] 268 Missing Number
+- [ ] 371 Sum of Two Integers
+- [ ] 48 Rotate Image
+- [ ] 54 Spiral Matrix
+- [ ] 73 Set Matrix Zeroes
+- [ ] Re-solve Week 11 problems
+
+### Week 13: Revision and mocks
+
+- [ ] Re-solve every problem marked hard or that took you more than one attempt
+- [ ] 3-4 timed mock sessions (2 problems in 45 minutes)
+- [ ] 2 machine-coding practice rounds (build a UI component in 45-60 minutes)
+- [ ] Clean up your `learning-in-public` notes and README
+
+## Checkpoints
+
+|After|You have covered|
+|---|---|
+|Week 4|The patterns most junior frontend interviews use (hashing, two pointers, sliding window, binary search, linked list)|
+|Week 6|Trees as well, which covers most easy and medium DSA rounds|
+|Week 13|The full Blind 75|
+
+If an interview is coming up soon, do Weeks 1-4 first and keep the JS utilities going.
 
 ## Progress log
 
-|Week|Problems done|Hardest problem|Notes|
-|---|---|---|---|
-|1||||
-|2||||
-|3||||
-|4||||
-|5||||
-|6||||
-|7||||
-|8||||
-|9||||
-|10||||
-|11||||
-|12||||
+| Week | Done | Hardest problem | Notes |
+| ---- | ---- | --------------- | ----- |
+| 1    |      |                 |       |
+| 2    |      |                 |       |
+| 3    |      |                 |       |
+| 4    |      |                 |       |
+| 5    |      |                 |       |
+| 6    |      |                 |       |
+| 7    |      |                 |       |
+| 8    |      |                 |       |
+| 9    |      |                 |       |
+| 10   |      |                 |       |
+| 11   |      |                 |       |
+| 12   |      |                 |       |
+| 13   |      |                 |       |
